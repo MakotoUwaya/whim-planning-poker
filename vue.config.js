@@ -3,6 +3,9 @@ module.exports = {
     host: process.env.HOST || "localhost"
   },
   configureWebpack: {
-    resolve: { symlinks: false }
-  }
+    resolve: {
+      symlinks: false
+    }
+  },
+  transpileDependencies: ["vuetify"]
 };
