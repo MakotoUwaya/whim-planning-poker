@@ -15,7 +15,7 @@ export default {
     },
   },
   computed: {
-    point: function () {
+    point() {
       return this.$whim.state[this.displayUser.id];
     },
   },
