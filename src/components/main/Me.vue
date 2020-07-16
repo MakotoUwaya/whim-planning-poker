@@ -22,14 +22,14 @@ export default {
   name: "Me",
   data: () => {
     return {
-      items: [0.5, 1, 2, 3, 4, 7, 8, 10]
+      items: [0.5, 1, 2, 3, 4, 7, 8, 10],
     };
   },
   methods: {
     select(point) {
       this.$whim.assignState({ [this.$whim.accessUser.id]: point });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

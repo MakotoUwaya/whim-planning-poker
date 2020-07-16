@@ -16,7 +16,7 @@
 export default {
   name: "Main",
   components: {
-    Me: () => import("@/components/main/Me")
+    Me: () => import("@/components/main/Me"),
   },
   computed: {
     users() {
@@ -25,7 +25,7 @@ export default {
     isAllSelected() {
       return (
         this.users.length > 0 &&
-        this.users.every(user => this.$whim.state[user.id])
+        this.users.every((user) => this.$whim.state[user.id])
       );
     },
     average() {
@@ -37,13 +37,13 @@ export default {
     },
     isAccessUserSelected() {
       return !!this.$whim.state[this.$whim.accessUser.id];
-    }
+    },
   },
   methods: {
     reset() {
       this.$whim.resetState();
-    }
-  }
+    },
+  },
 };
 </script>
 

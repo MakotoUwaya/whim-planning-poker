@@ -13,13 +13,13 @@
 export default {
   name: "Player",
   components: {
-    Result: () => import("@/components/player/Result")
+    Result: () => import("@/components/player/Result"),
   },
   props: {
     displayUser: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   }, // 表示されているUserの情報
   computed: {
     users() {
@@ -37,10 +37,10 @@ export default {
     isAllSelected() {
       return (
         this.users.length > 0 &&
-        this.users.every(user => this.$whim.state[user.id])
+        this.users.every((user) => this.$whim.state[user.id])
       );
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

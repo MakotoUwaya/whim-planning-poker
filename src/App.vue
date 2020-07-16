@@ -15,7 +15,7 @@ export default {
   name: "App",
   components: {
     Main: () => import("@/components/main/Index"),
-    Player: () => import("@/components/player/Index")
+    Player: () => import("@/components/player/Index"),
   },
   // settings for debug
   // mounted() {
@@ -26,8 +26,8 @@ export default {
   computed: {
     users() {
       return this.$whim.users;
-    }
-  }
+    },
+  },
 };
 </script>
 

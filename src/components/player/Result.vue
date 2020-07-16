@@ -11,14 +11,14 @@ export default {
   props: {
     displayUser: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
-    point: function() {
+    point: function () {
       return this.$whim.state[this.displayUser.id];
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

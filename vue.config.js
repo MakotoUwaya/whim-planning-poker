@@ -1,11 +1,11 @@
 module.exports = {
   devServer: {
-    host: process.env.HOST || "localhost"
+    host: process.env.HOST || "localhost",
   },
   configureWebpack: {
     resolve: {
-      symlinks: false
-    }
+      symlinks: false,
+    },
   },
-  transpileDependencies: ["vuetify"]
+  transpileDependencies: ["vuetify"],
 };
