@@ -1,5 +1,7 @@
 # wh.im Planning poker
 
+![title](./public/title.png)
+
 ## Description
 
 - [wh.im](https://wh.im/) running on the platform, [Planning Poker](https://tracpath.com/works/development/agile_planning_poker_and_userstory/) application.
