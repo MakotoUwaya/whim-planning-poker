@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy
+name: Build
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -32,11 +32,3 @@ jobs:
     
     - name: build
       run: yarn build
-
-    - name: Deploy Firebase Hosting
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        PROJECT_ID: whim-ap
-        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY_APPS }}

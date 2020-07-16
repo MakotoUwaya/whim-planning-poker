@@ -1,4 +1,4 @@
-# wh.im Planning poker
+# wh.im Planning poker ![Build](https://github.com/MakotoUwaya/whim-planning-poker/workflows/Build/badge.svg)
 
 ![title](./public/title.png)
 

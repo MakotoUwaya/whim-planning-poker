@@ -8,5 +8,8 @@ module.exports = {
     },
   },
   transpileDependencies: ["vuetify"],
+  publicPath: '/whim-planning-poker',
   outputDir: "docs",
+  filenameHashing: false,
+  productionSourceMap: false,
 };
