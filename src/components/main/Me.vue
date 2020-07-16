@@ -1,33 +1,43 @@
 <template>
-  <div>
-    <h2 class="subtitle">
-      選択してください！
-    </h2>
-    <div>
-      <img src="@/assets/rock.png" class="img" @click="select('rock')" />
-      <img
-        src="@/assets/scissors.png"
-        class="img"
-        @click="select('scissors')"
-      />
-      <img src="@/assets/paper.png" class="img" @click="select('paper')" />
-    </div>
-  </div>
+  <v-container>
+    <span class="subtitle"> ポイントを<br />選んでください </span>
+    <v-row class="text-center">
+      <v-btn
+        v-for="item in items"
+        :key="item"
+        class="ma-2"
+        fab
+        dark
+        large
+        color="secondary"
+        @click="select(item)"
+      >
+        <span class="text-h5">{{ item }}</span>
+      </v-btn>
+    </v-row>
+  </v-container>
 </template>
 <script>
 export default {
   name: "Me",
+  data: () => {
+    return {
+      items: [0.5, 1, 2, 3, 4, 7, 8, 10]
+    };
+  },
   methods: {
-    select(show) {
-      this.$whim.assignState({ [this.$whim.accessUser.id]: show });
+    select(point) {
+      this.$whim.assignState({ [this.$whim.accessUser.id]: point });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.img {
-  width: 150px;
-
-  max-width: 30vw;
+.subtitle {
+  font-weight: 300;
+  font-size: 30px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
 }
 </style>

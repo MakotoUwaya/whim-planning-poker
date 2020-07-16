@@ -1,8 +1,15 @@
 <template>
-  <div class="container">
-    <a v-if="isAllSelected" class="btn" @click="reset">もう一度</a>
+  <v-container class="pa-0 ma-0">
+    <div v-if="isAllSelected" class="me">
+      <h2>
+        <v-btn class="ma-2" fab x-large dark color="accent">
+          <span class="text-h4">{{ average }}</span>
+        </v-btn>
+      </h2>
+      <v-btn color="secondary" class="my-4" @click="reset">続ける</v-btn>
+    </div>
     <Me v-if="!isAccessUserSelected" class="me" />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -21,6 +28,13 @@ export default {
         this.users.every(user => this.$whim.state[user.id])
       );
     },
+    average() {
+      let sum = 0;
+      for (const user of this.users) {
+        sum += Number(this.$whim.state[user.id]);
+      }
+      return sum / this.users.length;
+    },
     isAccessUserSelected() {
       return !!this.$whim.state[this.$whim.accessUser.id];
     }
@@ -34,37 +48,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
-  display: block;
-  background-color: #ffc605;
-  color: #fff;
-  padding: 0.8em;
-  text-decoration: none;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease-out;
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  text-align: center; /*一応BOX内の文字も中央寄せ*/
-
-  &:hover {
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.12),
-      0 3px 20px 0 rgba(0, 0, 0, 0.12), 0 5px 6px -2px rgba(0, 0, 0, 0.2);
-  }
-}
-
 .me {
   position: absolute;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 500px;
+  width: 400px;
+}
+
+.result {
+  font-weight: 500;
+  font-size: 60px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
 }
 </style>

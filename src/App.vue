@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <Main class="main" />
 
     <Player
@@ -8,7 +8,7 @@
       :class="whimUserWindowClass(user)"
       :displayUser="user"
     />
-  </div>
+  </v-app>
 </template>
 <script>
 export default {
@@ -32,6 +32,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.theme--light.v-application {
+  background: none;
+}
+
 .main {
   position: relative;
   z-index: 1;
