@@ -22,6 +22,7 @@ export default {
   name: "Me",
   data: () => {
     return {
+      // TODO: アプリの設定で変更できるようにする
       items: [0.5, 1, 2, 3, 4, 7, 8, 10],
     };
   },

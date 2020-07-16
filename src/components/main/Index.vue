@@ -28,6 +28,7 @@ export default {
         this.users.every((user) => this.$whim.state[user.id])
       );
     },
+    // TODO: 平均値を表示するか、最大値を表示するか設定できるようにする
     average() {
       let sum = 0;
       for (const user of this.users) {
